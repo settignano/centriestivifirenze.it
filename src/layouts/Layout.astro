@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+import { Image } from 'astro:assets';
+import logoCdp from '../assets/images/logo_cdp.svg';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Centri Estivi a Settignano - sulle colline di Firenze. Un'estate immersi nella natura." } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta name="generator" content={Astro.generator} />
+</head>
+<body class="bg-amber-50 min-h-screen text-slate-800 font-sans selection:bg-teal-200 selection:text-teal-900 flex flex-col antialiased">
+	<header class="p-4 md:px-8 border-b border-amber-200/50 bg-amber-50/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+		<div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+			<a href="#" class="font-bold text-xl md:text-2xl tracking-tight text-teal-800 hover:text-teal-600 transition-colors flex items-center gap-3">
+				<Image src={logoCdp} alt="Logo Casa del Popolo Settignano" class="h-10 w-auto" />
+				<span>Centri Estivi Settignano</span>
+			</a>
+			<!-- Mobile navigation minimal, desktop full -->
+			<nav class="hidden md:flex flex-wrap gap-6 text-sm font-medium items-center">
+				<a href="#intro" class="hover:text-teal-600 border-b-2 border-transparent hover:border-teal-500 transition-all">Intro</a>
+				<a href="#location" class="hover:text-teal-600 border-b-2 border-transparent hover:border-teal-500 transition-all">Location</a>
+				<a href="#attivita" class="hover:text-teal-600 border-b-2 border-transparent hover:border-teal-500 transition-all">Attività</a>
+				<a href="#calendario" class="hover:text-teal-600 border-b-2 border-transparent hover:border-teal-500 transition-all">Calendario</a>
+				<a href="#costi" class="hover:text-teal-600 border-b-2 border-transparent hover:border-teal-500 transition-all">Costi</a>
+				<a href="#faq" class="hover:text-teal-600 border-b-2 border-transparent hover:border-teal-500 transition-all">FAQ</a>
+        		<a href="#contatti" class="px-5 py-2 bg-rose-500 text-white rounded-full shadow-md hover:bg-rose-400 hover:shadow-lg transition-all transform hover:-translate-y-0.5 font-bold">Iscriviti</a>
+			</nav>
+
+			<!-- Mobile view Call to Action -->
+			<a href="#contatti" class="md:hidden px-4 py-2 bg-rose-500 text-white text-sm rounded-full shadow-md hover:bg-rose-400 transition-all font-bold">Iscriviti</a>
+		</div>
+	</header>
+
+	<main class="flex-grow flex flex-col">
+		<slot />
+	</main>
+
+	<footer class="bg-teal-900 text-teal-100 py-12 px-6 mt-12 border-t-4 border-teal-700">
+		<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+			<div>
+				<p class="font-bold text-xl mb-1 text-white flex items-center gap-2">
+					☀️ Centri Estivi Settignano
+				</p>
+				<p class="text-sm text-teal-300">Un'estate indimenticabile, a due passi da Firenze.</p>
+				<p class="text-sm mt-4 text-teal-500">&copy; {new Date().getFullYear()} Tutti i diritti riservati.</p>
+			</div>
+			
+			<div class="flex flex-col gap-2 text-sm font-medium">
+				<a href="#privacy" class="hover:text-white transition-colors">📄 Privacy Policy & Termini</a>
+				<a href="#cookie" class="hover:text-white transition-colors">🍪 Gestione Cookie</a>
+				<a href="#contatti" class="hover:text-white transition-colors">✉️ Contattaci</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
