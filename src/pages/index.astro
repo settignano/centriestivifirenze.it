@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
 // Import images
+import imgCover from '../assets/photos/cover.jpg';
 import imgSettignano01 from '../assets/photos/settignano_01.jpeg';
 import imgSettignano02 from '../assets/photos/settignano_02.jpeg';
 import imgLaboratorio01 from '../assets/photos/laboratorio-01.jpeg';
@@ -33,10 +34,6 @@ const weeks = [
 	{ id: "Settimana 5", dates: "13 Luglio - 17 Luglio" },
 	{ id: "Settimana 6", dates: "20 Luglio - 24 Luglio" },
 	{ id: "Settimana 7", dates: "27 Luglio - 31 Luglio" },
-	{ id: "Settimana 8", dates: "3 Agosto - 7 Agosto" },
-	{ id: "Settimana 9", dates: "10 Agosto - 14 Agosto" },
-	{ id: "Settimana 10", dates: "17 Agosto - 21 Agosto" },
-	{ id: "Settimana 11", dates: "24 Agosto - 28 Agosto" },
 	{ id: "Settimana 12", dates: "31 Agosto - 4 Settembre" },
 	{ id: "Settimana 13", dates: "7 Settembre - 10 Settembre" }
 ];
@@ -52,8 +49,8 @@ const weeks = [
 		
 		<div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center w-full">
 			<!-- Immagine Iniziale (Hero Banner) -->
-			<div class="w-full h-[30vh] md:h-[50vh] mb-10 md:mb-14 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl relative border-4 md:border-8 border-white group">
-				<Image src={imgGiochi} alt="Ragazzi che si divertono al Centro Estivo" class="w-full h-full object-cover" width={1200} />
+			<div class="w-full mb-10 md:mb-14 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl relative border-4 md:border-8 border-white group">
+				<Image src={imgCover} alt="Ragazzi che si divertono al Centro Estivo" class="w-full h-full object-cover" height={400} />
 				<div class="absolute inset-0 bg-linear-to-t from-teal-900/40 to-transparent mix-blend-multiply"></div>
 			</div>
 
@@ -65,7 +62,7 @@ const weeks = [
 			</h1>
 			
 			<div class="text-lg md:text-xl text-slate-700 mb-10 max-w-4xl leading-relaxed space-y-6 text-left p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-white">
-				<p>Dal <strong>15 giugno al 10 settembre</strong> una nuova edizione dei centri estivi della <strong>Casa del Popolo</strong>, in partenariato con l’Associazione “La Fonte APS” e l’Associazione “Il tango delle civiltà APS”, <em>“Conti anche tu! in E-state insieme contiamo ancor di più…”</em>, progetto realizzato con i contributi della Fondazione CR Firenze nell’ambito del bando E-state insieme 6.</p>
+				<p>Dal <strong>15 giugno al 10 settembre</strong> una nuova edizione dei centri estivi della <strong>Casa del Popolo</strong>, <em>“Conti anche tu! in E-state insieme contiamo ancor di più…”</em>, progetto realizzato con i contributi della Fondazione CR Firenze nell’ambito del bando E-state insieme 6.</p>
 				
 				<p>E’ un progetto in cui crediamo molto, in contrasto alla povertà educativa, pensato per rispondere all’esigenza di rafforzare sul territorio la presenza di spazi di incontro, di scambio, di crescita e di rigenerazione per <strong>bambini e adolescenti dai 6 ai 13 anni</strong>, con una speciale attenzione all’inclusione di bambini <strong>DSA</strong> e <strong>BES</strong>.</p>
 				
@@ -312,17 +309,9 @@ const weeks = [
 						</div>
 						<div>
 							<p class="text-teal-200 text-sm mb-1 font-bold uppercase tracking-wider">✉️ Email</p>
-							<p class="text-lg"><a href="mailto:info@centriestivifirenze.it" class="hover:underline">info@centriestivifirenze.it</a></p>
+							<p class="text-lg"><a href="mailto:centriestivisettignano@gmail.com" class="hover:underline">centriestivisettignano@gmail.com</a></p>
 						</div>
-					</div>
-					
-					<div class="mt-12 bg-teal-900/50 p-6 rounded-2xl border border-teal-700/50">
-						<p class="text-sm leading-relaxed">
-							In partenariato con:<br>
-							<strong>Associazione “La Fonte APS”</strong><br>
-							<strong>Associazione “Il tango delle civiltà APS”</strong>
-						</p>
-					</div>
+					</div>					
 				</div>
 
 				<!-- Form -->
@@ -357,7 +346,6 @@ const weeks = [
 			</p>
 			<p>
 				Non vendiamo o cediamo a terzi nessun dato. Il titolare del trattamento è "Casa del Popolo Settignano". 
-				Per rettifiche o cancellazioni, puoi scrivere in qualsiasi momento a <a href="mailto:privacy@centriestivifirenze.it" class="text-teal-600 font-medium hover:underline">privacy@centriestivifirenze.it</a>.
 			</p>
 		</div>
 	</section>
